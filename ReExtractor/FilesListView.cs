@@ -7,10 +7,11 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 
 namespace ReExtractor
 {
-    class FilesListView : ListView
+    class FilesListView : MetroListView
     {
         private IContainer Components;
         private new ColumnHeader Name;
