@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 
-namespace Re_Extractor
+namespace ReExtractor
 {
-    public partial class Form1 : Form
+    public partial class MainForm : MetroForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }

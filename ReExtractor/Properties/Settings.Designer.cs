@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Re_Extractor.Properties
+namespace ReExtractor.Properties
 {
 
 

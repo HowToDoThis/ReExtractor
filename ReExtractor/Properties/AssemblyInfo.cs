@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Re-Extractor")]
+[assembly: AssemblyTitle("ReExtractor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Re-Extractor")]
+[assembly: AssemblyProduct("ReExtractor")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a2bfb925-9b15-4bb9-9965-aea0545ea432")]
+[assembly: Guid("e58363bb-9261-4e7b-8dfc-af97c75e738c")]
 
 // Version information for an assembly consists of the following four values:
 //
