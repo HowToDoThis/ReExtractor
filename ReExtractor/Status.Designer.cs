@@ -125,6 +125,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Status";
+            this.Resizable = false;
             this.Text = "Status";
             this.Load += new System.EventHandler(this.Status_Load);
             this.ResumeLayout(false);

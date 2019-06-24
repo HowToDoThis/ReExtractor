@@ -78,6 +78,7 @@ namespace ReExtractor
                     {
                         foreach (NexonArchiveFileEntry entry2 in CollectionEntry)
                         {
+                            Worker.ReportProgress(0, entry2.Path);
                             if (!PredicateEntry(entry2))
                                 throw new ApplicationException("Task sent an abort code.");
                             if (Worker.CancellationPending)
@@ -100,7 +101,7 @@ namespace ReExtractor
 
                 int width2 = Spinner.ClientSize.Width;
                 Spinner.Maximum = width2;
-                Spinner.Value = Convert.ToInt32(pu2.CurrentFileSize * (long)width / pu2.TotalFileSize);
+                Spinner.Value = Convert.ToInt32(pu2.CurrentFileSize * (long)width2 / pu2.TotalFileSize);
                 return;
             }
 
@@ -108,7 +109,7 @@ namespace ReExtractor
 
             if (!String.IsNullOrEmpty(path))
             {
-                path = path.Replace(Path.AltDirectorySeparatorChar, Path.DirectorySeparatorChar);
+                path = path.Replace(Path.DirectorySeparatorChar, Path.DirectorySeparatorChar);
                 int Index = 0;
 
                 while (path[Index] == Path.DirectorySeparatorChar)
@@ -117,7 +118,7 @@ namespace ReExtractor
                 path = path.Substring(Index);
                 SrcData.Text = path;
 
-                if (DestData != null)
+                if (DestinationPath != null)
                     DestData.Text = Path.Combine(DestinationPath, path);
             }
         }

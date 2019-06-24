@@ -57,7 +57,7 @@ namespace ReExtractor
             }
             catch (Exception)
             {
-                MetroMessageBox.Show(this, "Could not open file : " + NarFile, "Error");
+                MessageBox.Show("Could not open file : " + NarFile, "Error");
                 return;
             }
 
@@ -104,12 +104,14 @@ namespace ReExtractor
         {
             CurrentPath.Text = e.Path;
             FileList.FullPath = e.Path;
+            FileList.BeginUpdate();
             FileList.Items.Clear();
             if (e.File != null)
             {
                 foreach (NexonArchiveFileEntry entry in e.File)
                     FileList.AddFile(entry);
             }
+            FileList.EndUpdate();
             FileList_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
@@ -134,11 +136,13 @@ namespace ReExtractor
                 {
                     status.Text = "Extracting files...";
                     status.DestinationPath = ExHelper.ExtractPath;
+
                     DialogResult dr = status.ShowDialog(this);
+
                     if (dr == DialogResult.Abort)
-                        MetroMessageBox.Show(this, "An Error Occured While Extracting The Files...", "Error");
+                        MessageBox.Show("An Error Occured While Extracting The Files...", "Error");
                     else if (dr == DialogResult.OK)
-                        MetroMessageBox.Show(this, "All The Selected Files Have Been Extracted Successfully.", "Complete");
+                        MessageBox.Show("All The Selected Files Have Been Extracted Successfully.", "Complete");
                 }
             }
         }
@@ -153,13 +157,11 @@ namespace ReExtractor
             using (Status status = new Status(new Predicate<NexonArchiveFileEntry>(VerifyHelper), e.File))
             {
                 status.Text = "Verifying files...";
-                status.DestinationPath = ExHelper.ExtractPath;
                 DialogResult dr = status.ShowDialog(this);
                 if (dr == DialogResult.Abort)
-                    MetroMessageBox.Show(this, "An Error Occured While Verifying The Files...", "Error");
+                    MessageBox.Show("An Error Occured While Verifying The Files...", "Error");
                 else if (dr == DialogResult.OK)
-                    MetroMessageBox.Show(this, "All The Selected Files Have Been Verified Successfully.", "Complete");
-
+                    MessageBox.Show("All The Selected Files Have Been Verified Successfully.", "Complete");
             }
         }
 
